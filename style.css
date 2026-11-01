@@ -1,0 +1,58 @@
+/* Palette: ivory, deep emerald, antique gold, blush. Change here only. */
+:root{--bg:#fbf6ea;--card:#fffdf7;--emerald:#0f4a3c;--ink:#2b3a34;--gold:#b8923a;--gold2:#e8cf8a;--blush:#f6d5d5;
+--script:"Great Vibes",cursive;--serif:"Cormorant Garamond",Georgia,serif;--ar:"Amiri",serif}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}
+body{font:clamp(1.05rem,3.8vw,1.25rem)/1.6 var(--serif);color:var(--ink);background:var(--bg) radial-gradient(#0000000a 1px,transparent 1px) 0 0/6px 6px;text-align:center}
+body.locked{overflow:hidden}
+#site{max-width:520px;margin:auto;background:var(--bg);box-shadow:0 0 60px #0001;position:relative}
+.sec{padding:4.5rem 1.5rem;position:relative}.full{min-height:100dvh;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:.6rem;position:relative;padding:4rem 1.5rem}
+.script{font-family:var(--script);font-weight:400;line-height:1.15}
+.gold{background:linear-gradient(100deg,var(--gold) 20%,var(--gold2) 45%,var(--gold) 70%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+h1{font-size:clamp(2.8rem,14vw,4.6rem)}h2{font-size:clamp(2.4rem,10vw,3.4rem);margin-bottom:.3rem}h3{font-size:1.5rem;font-weight:600;color:var(--emerald)}
+.small{font-style:italic;letter-spacing:.08em}.date{font-weight:600;color:var(--emerald);font-size:1.3em}
+.arabic{font-family:var(--ar);font-size:clamp(1.8rem,8vw,2.6rem);margin-bottom:.4rem}
+.frame{margin:1.5rem auto;padding:1.2rem .8rem;border:1px solid var(--gold);outline:1px solid var(--gold2);outline-offset:6px;border-radius:14px;background:var(--card);max-width:20rem}
+.host{font-style:italic}
+.corner{position:absolute;width:120px;height:120px;pointer-events:none}.tl{top:0;left:0}.br{bottom:0;right:0;transform:rotate(180deg)}
+.spray{width:min(300px,80%);height:40px;display:block;margin:0 auto 1.5rem}
+.down{margin-top:2rem;color:var(--emerald);text-decoration:none;font-size:.9rem}.down span{display:block;font-size:1.6rem;animation:bob 1.6s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin:1.5rem 0}.trio.four{grid-template-columns:repeat(4,1fr);gap:.5rem}
+.dcard{background:var(--card);border:1px solid var(--gold);border-radius:14px;padding:1rem .3rem;box-shadow:0 6px 18px #b8923a22}
+.dcard b{display:block;font-size:clamp(1.3rem,6vw,2rem);color:var(--emerald)}.dcard i{color:var(--gold);font-style:normal}.dcard small{font-size:.75rem;letter-spacing:.05em}
+.dcard b.tick{animation:flip .5s}@keyframes flip{from{opacity:0;transform:rotateX(90deg)}}
+.btn{display:inline-block;margin-top:1rem;padding:.8rem 1.8rem;border-radius:99px;background:var(--emerald);color:var(--gold2);text-decoration:none;border:1px solid var(--gold);cursor:pointer}
+.btn:hover,.btn:focus-visible{background:var(--gold);color:#fff}
+.done{font-size:1.4rem;color:var(--emerald)}
+.timeline{list-style:none;padding:0;margin-top:1.5rem;border-left:1px solid var(--gold);margin-left:1.2rem;text-align:left}
+.timeline li{position:relative;padding:0 0 2rem 2rem}
+.num{position:absolute;left:-1.05rem;top:0;width:2.1rem;height:2.1rem;border-radius:50%;background:var(--emerald);color:var(--gold2);display:grid;place-items:center;border:1px solid var(--gold)}
+.ecard{background:var(--card);border:1px solid var(--gold);border-radius:14px;overflow:hidden;padding-bottom:1rem;text-align:center;box-shadow:0 6px 18px #b8923a22}
+.ecard img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:var(--blush)}.etime{font-style:italic;margin-top:.8rem}
+.map{width:100%;height:240px;border:1px solid var(--gold);border-radius:18px;margin-top:1.5rem}
+.mono{font-size:3.4rem}.names{font-size:2.4rem}footer p{margin:.3rem 0}
+/* Envelope */
+#intro{position:fixed;inset:0;z-index:50;display:grid;place-content:center;justify-items:center;gap:2rem;background:var(--emerald);transition:opacity 1s}
+#intro.gone{opacity:0;pointer-events:none}.tap{color:var(--gold2);font-style:italic;animation:pulse 2s infinite}
+.envelope{position:relative;width:min(84vw,360px);aspect-ratio:3/2;perspective:900px}
+.envelope>*{position:absolute}.pocket{inset:0;background:linear-gradient(135deg,#f3e6c4,#e9d6a4);border-radius:6px;clip-path:polygon(0 0,50% 55%,100% 0,100% 100%,0 100%);z-index:3}
+.flap{left:0;right:0;top:0;height:60%;background:#e6d199;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .9s .1s,z-index 0s .5s;z-index:4;backface-visibility:hidden}
+.card{inset:6% 6%;background:var(--card);border:1px solid var(--gold);border-radius:6px;display:grid;place-content:center;z-index:2;transition:transform 1s .8s;color:var(--emerald)}.card .script{font-size:2.6rem}
+.seal{left:50%;top:50%;width:62px;height:62px;translate:-50% -50%;border-radius:50%;border:2px solid var(--gold2);background:radial-gradient(circle at 35% 30%,#a8323e,#6e1420);color:var(--gold2);font:1.05rem var(--script);z-index:5;cursor:pointer;animation:pulse 2s infinite;transition:opacity .4s}
+.open .flap{transform:rotateX(180deg);z-index:1}.open .card{transform:translateY(-55%) scale(1.05);z-index:6}.open .seal{opacity:0;pointer-events:none}
+@keyframes pulse{50%{opacity:.6;scale:1.06}}
+/* Music button + petals + reveal */
+#music{position:fixed;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom));z-index:40;width:48px;height:48px;border-radius:50%;border:1px solid var(--gold);background:var(--emerald);color:var(--gold2);font-size:1.3rem;cursor:pointer}
+#music.on{animation:spin 6s linear infinite}#music:not(.on)::after{content:"";position:absolute;inset:22px 8px auto;height:2px;background:var(--gold2);rotate:-45deg}
+@keyframes spin{to{rotate:360deg}}
+.petal{position:fixed;top:-20px;z-index:1;pointer-events:none;width:10px;height:14px;background:var(--blush);border-radius:80% 0 80% 0;opacity:.7;animation:fall linear infinite}
+@keyframes fall{to{transform:translate(var(--x),105vh) rotate(540deg)}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s,transform .9s}.reveal.in{opacity:1;transform:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.petal{display:none}}
+/* Invitation-style arch panel (emerald with gold, like the printed card) */
+.arch{background:var(--emerald);color:var(--gold2);border:3px double var(--gold);border-radius:999px 999px 18px 18px/240px 240px 18px 18px;padding:5rem 1.4rem 2.5rem;box-shadow:0 12px 30px #0f4a3c44}
+.arch h3{color:var(--gold2);margin:.3rem 0 1rem}.arch .host{margin:.2rem 0}.arch .frame{background:transparent;margin:1rem auto 0}.inv{letter-spacing:.06em;font-weight:600}
+h1{font-size:clamp(2.3rem,11vw,3.6rem)}.from{margin-top:1.5rem}#phones a{color:var(--emerald)}
+.ph{aspect-ratio:16/9;background:var(--blush);display:grid;place-items:center}.ph svg{height:70%;width:auto}
