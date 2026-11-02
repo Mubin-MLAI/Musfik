@@ -82,7 +82,14 @@ $("#open").onclick = () => {
   $("#intro").classList.add("flash");
   $(".envelope").classList.add("open");
   if (store.get() !== "1") setMusic(true, false);
-  setTimeout(() => { $("#intro").classList.add("gone"); document.body.classList.remove("locked"); }, 2200);
+  setTimeout(() => {
+    $("#intro").classList.add("gone");
+    document.body.classList.remove("locked");
+    window.scrollTo({
+      top: 0,
+      behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
+    });
+  }, 2200);
   setTimeout(() => $("#intro").remove(), 3300);
 };
 
