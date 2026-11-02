@@ -12,7 +12,7 @@ const CONFIG = {
   whatsapp: "919889092032",                     // country code + number, no "+"
   music: ["assets/jashn-e-bahaaraa-instrumental.mp3", "assets/music.mp3"],  // tried in order
   events: [  // add or remove cards freely
-    { time: "Baad Namaz-e-Maghrib", date: "24 November 2026", name: "Walima Ceremony", img: "assets/dinner.webp" }
+    { time: "Baad Namaz-e-Maghrib", date: "24 November 2026", name: "Walima Ceremony", img: "couple.png" }
   ]
 };
 
@@ -38,9 +38,9 @@ $("#phones").innerHTML = CONFIG.phones.map(p => `<a href="tel:${p.replace(/\s/g,
 /* Events timeline from one template */
 CONFIG.events.forEach((e, i) => {
   const n = $("#ev").content.cloneNode(true);
-  n.querySelector(".num").textContent = i + 1;
+  n.querySelector(".event-number").textContent = i + 1;
   const img = n.querySelector("img");
-  img.onerror = () => { const d = document.createElement("div"); d.className = "ph"; d.innerHTML = '<svg viewBox="0 0 100 100" aria-hidden="true"><use href="#fl" width="100" height="100"/></svg>'; img.replaceWith(d); };  // flower placeholder if the photo is missing
+  img.onerror = () => { const d = document.createElement("div"); d.className = "ph"; d.innerHTML = '<svg viewBox="0 0 100 100" aria-hidden="true"><use href="#flower" width="100" height="100"/></svg>'; img.replaceWith(d); };
   img.alt = e.name; img.src = e.img;
   n.querySelector(".etime").textContent = e.time; n.querySelector(".edate").textContent = e.date;
   n.querySelector("h3").textContent = e.name; $("#events").append(n);
@@ -79,6 +79,7 @@ document.addEventListener("visibilitychange", () => { if (document.hidden) bgm.p
 
 /* Envelope */
 $("#open").onclick = () => {
+  $("#intro").classList.add("flash");
   $(".envelope").classList.add("open");
   if (store.get() !== "1") setMusic(true, false);
   setTimeout(() => { $("#intro").classList.add("gone"); document.body.classList.remove("locked"); }, 2200);

@@ -7,108 +7,169 @@
 <meta name="description" content="You are warmly invited to the Walima Ceremony on 24 November 2026 at Lakhpedabagh Lawn, Barabanki.">
 <meta property="og:title" content="Syed Abul Kalam “Mushfiq” — Walima Ceremony">
 <meta property="og:description" content="You are warmly invited to celebrate with us.">
-<meta property="og:image" content="assets/invitation.jpg">
+<meta property="og:image" content="couple.png">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amiri&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri&family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body class="locked">
-<!-- Reusable flower + spray (inline SVG: zero image weight, swap for assets/*.webp if you like) -->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="fl" viewBox="-50 -50 100 100"><g fill="var(--blush)" stroke="var(--gold)" stroke-width="1.5">
-    <ellipse cx="0" cy="-26" rx="13" ry="22"/><ellipse cx="0" cy="-26" rx="13" ry="22" transform="rotate(72)"/><ellipse cx="0" cy="-26" rx="13" ry="22" transform="rotate(144)"/><ellipse cx="0" cy="-26" rx="13" ry="22" transform="rotate(216)"/><ellipse cx="0" cy="-26" rx="13" ry="22" transform="rotate(288)"/></g><circle r="7" fill="var(--gold)"/></symbol>
-  <symbol id="spray" viewBox="0 0 300 40"><path d="M10 20h110M180 20h110" stroke="var(--gold)" fill="none"/><use href="#fl" x="130" y="2" width="36" height="36"/><use href="#fl" x="100" y="10" width="20" height="20"/><use href="#fl" x="180" y="10" width="20" height="20"/></symbol>
-  <symbol id="corner" viewBox="0 0 120 120"><path d="M4 116C4 50 50 4 116 4" stroke="var(--emerald)" stroke-width="2" fill="none"/><use href="#fl" x="6" y="6" width="56" height="56"/><use href="#fl" x="48" y="4" width="30" height="30"/><use href="#fl" x="4" y="48" width="30" height="30"/></symbol>
+<svg class="svg-defs" aria-hidden="true">
+  <symbol id="flower" viewBox="0 0 100 100">
+    <g fill="none" stroke="currentColor" stroke-width="1.5">
+      <ellipse cx="50" cy="24" rx="9" ry="17"/><ellipse cx="50" cy="24" rx="9" ry="17" transform="rotate(60 50 50)"/>
+      <ellipse cx="50" cy="24" rx="9" ry="17" transform="rotate(120 50 50)"/><ellipse cx="50" cy="24" rx="9" ry="17" transform="rotate(180 50 50)"/>
+      <ellipse cx="50" cy="24" rx="9" ry="17" transform="rotate(240 50 50)"/><ellipse cx="50" cy="24" rx="9" ry="17" transform="rotate(300 50 50)"/>
+      <circle cx="50" cy="50" r="5" fill="currentColor"/>
+    </g>
+  </symbol>
+  <symbol id="divider" viewBox="0 0 320 28">
+    <path d="M0 14h118m84 0h118M132 14l28-8 28 8-28 8z" fill="none" stroke="currentColor" stroke-width="1"/>
+    <use href="#flower" x="146" y="0" width="28" height="28"/>
+  </symbol>
 </svg>
 
-<!-- 1. ENVELOPE -->
-<section id="intro" aria-label="Envelope">
+<section id="intro" aria-label="Invitation envelope">
   <div class="envelope">
-    <div class="card"><p class="script">Mushfiq</p><p>Walima Ceremony</p></div>
-    <div class="flap"></div><div class="pocket"></div>
-    <button class="seal" id="open" aria-label="Open the invitation">M&amp;T</button>
+    <div class="card">
+      <svg class="envelope-flower top" aria-hidden="true"><use href="#flower"/></svg>
+      <p class="eyebrow">A day to celebrate</p>
+      <p class="script invitation-name">Mushfiq</p>
+      <svg class="ornament-rule" aria-hidden="true"><use href="#divider"/></svg>
+      <p class="envelope-title">Walima Ceremony</p>
+      <p class="envelope-date" data-b="dateLong"></p>
+      <svg class="envelope-flower bottom" aria-hidden="true"><use href="#flower"/></svg>
+    </div>
+    <div class="flap"></div>
+    <div class="pocket"></div>
+    <svg class="envelope-spray" aria-hidden="true"><use href="#flower"/></svg>
+    <button class="seal" id="open" aria-label="Open the invitation">
+      <span>MT</span>
+    </button>
   </div>
   <p class="tap">Tap to open</p>
 </section>
 
 <main id="site">
-  <!-- 2. HERO -->
-  <section class="hero full">
-    <svg class="corner tl" aria-hidden="true"><use href="#corner"/></svg><svg class="corner br" aria-hidden="true"><use href="#corner"/></svg>
-    <p class="small reveal">The Walima Ceremony Of</p>
-    <h1 class="script gold reveal" data-b="groom"></h1>
-    <p class="reveal">invites you to celebrate with them</p>
-    <p class="date reveal" data-b="dateLong"></p>
-    <p class="reveal" data-b="venue"></p><p class="reveal" data-b="city"></p>
-    <a class="down" href="#blessing" aria-label="Scroll down">Scroll down<span>⌄</span></a>
+  <section class="hero full" id="home">
+    <div class="hero-wash"></div>
+    <div class="hero-arch" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="eyebrow reveal">The Walima Ceremony Of</p>
+      <h1 class="script gold reveal" data-b="groom"></h1>
+      <svg class="ornament-rule reveal" aria-hidden="true"><use href="#divider"/></svg>
+      <p class="hero-subtitle reveal">invites you to celebrate with them</p>
+      <p class="date reveal" data-b="dateLong"></p>
+      <p class="hero-place reveal"><span data-b="venue"></span><span class="place-dot">✦</span><span data-b="city"></span></p>
+    </div>
+    <a class="down" href="#blessing" aria-label="Scroll to invitation details">
+      <span>Scroll down</span><i aria-hidden="true">⌄</i>
+    </a>
   </section>
 
-  <!-- 3. BLESSING -->
-  <section id="blessing" class="sec">
-    <svg class="spray"><use href="#spray"/></svg>
-    <div class="arch reveal">
-      <p class="arabic gold" lang="ar" dir="rtl">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيمِ</p>
-      <p>With the blessings of</p><p class="host"><b data-b="elders"></b></p><p>for their grandson</p>
-      <p class="host"><b data-b="parents"></b></p><p>inviting you to the</p>
-      <h2 class="script gold">Walima Ceremony</h2>
-      <p>of their beloved son</p><h3 data-b="groom"></h3>
-      <div class="frame"><p class="inv">All relatives and friends</p></div>
+  <section id="blessing" class="section blessing-section">
+    <div class="section-inner">
+      <div class="blessing-card reveal">
+        <svg class="blessing-flower" aria-hidden="true"><use href="#flower"/></svg>
+        <p class="arabic gold" lang="ar" dir="rtl">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيمِ</p>
+        <svg class="ornament-rule" aria-hidden="true"><use href="#divider"/></svg>
+        <p class="eyebrow">With the blessings of</p>
+        <p class="host"><b data-b="elders"></b></p>
+        <p class="host-note">and with the love and duas of</p>
+        <p class="host"><b data-b="parents"></b></p>
+        <p class="invitation-copy">request the pleasure of your company<br>at the Walima Ceremony of their beloved son</p>
+        <h2 class="script gold" data-b="groom"></h2>
+        <div class="all-welcome">All relatives and friends are warmly welcome</div>
+      </div>
     </div>
   </section>
 
-  <!-- 4. SAVE THE DATE -->
-  <section class="sec">
-    <h2 class="script gold reveal">Save the Date</h2><p class="small reveal">Mark your calendar</p>
-    <div class="trio reveal">
-      <div class="dcard"><b id="d-day"></b><i>✦</i></div><div class="dcard"><b id="d-mon"></b><i>✦</i></div><div class="dcard"><b id="d-yr"></b><i>✦</i></div>
+  <section class="section date-section" id="date">
+    <div class="section-inner">
+      <p class="eyebrow reveal">A day to remember</p>
+      <h2 class="script gold reveal">Save the Date</h2>
+      <p class="section-kicker reveal">Mark your calendar</p>
+      <svg class="ornament-rule reveal" aria-hidden="true"><use href="#divider"/></svg>
+      <div class="date-cards reveal">
+        <div class="date-card"><span class="date-star">✦</span><b id="d-day"></b><small>Day</small></div>
+        <div class="date-card"><span class="date-star">✦</span><b id="d-mon"></b><small>Month</small></div>
+        <div class="date-card"><span class="date-star">✦</span><b id="d-yr"></b><small>Year</small></div>
+      </div>
+      <p class="date-note reveal">We can't wait to celebrate with you on <span data-b="dateLong"></span></p>
+      <a class="btn btn-outline reveal" id="cal" target="_blank" rel="noopener">Add to Calendar <span aria-hidden="true">↗</span></a>
     </div>
-    <p class="reveal">We can't wait to celebrate with you on <span data-b="dateLong"></span></p>
-    <a class="btn reveal" id="cal" target="_blank" rel="noopener">Add to Calendar</a>
   </section>
 
-  <!-- 5. COUNTDOWN -->
-  <section class="sec">
-    <h2 class="script gold reveal">Counting down to forever</h2>
-    <div class="trio four reveal" id="count" aria-live="off">
-      <div class="dcard"><b data-u="d">0</b><small>Days</small></div><div class="dcard"><b data-u="h">0</b><small>Hours</small></div>
-      <div class="dcard"><b data-u="m">0</b><small>Minutes</small></div><div class="dcard"><b data-u="s">0</b><small>Seconds</small></div>
+  <section class="countdown-section section">
+    <div class="countdown-inner reveal">
+      <p class="eyebrow">The celebrations begin in</p>
+      <h2 class="script">Counting down to forever</h2>
+      <div class="countdown-grid" id="count" aria-live="off">
+        <div class="count-unit"><b data-u="d">0</b><small>Days</small></div>
+        <div class="count-unit"><b data-u="h">0</b><small>Hours</small></div>
+        <div class="count-unit"><b data-u="m">0</b><small>Minutes</small></div>
+        <div class="count-unit"><b data-u="s">0</b><small>Seconds</small></div>
+      </div>
+      <p class="done" id="done" hidden>Alhamdulillah, the celebration has begun!</p>
     </div>
-    <p class="done" id="done" hidden>Alhamdulillah, the celebration has begun!</p>
   </section>
 
-  <!-- 6. EVENTS: add more cards by adding to CONFIG.events -->
-  <section class="sec">
-    <h2 class="script gold reveal">Wedding Events</h2>
-    <ol class="timeline" id="events"></ol>
-    <template id="ev"><li class="reveal"><span class="num"></span><div class="ecard">
-      <img alt="" loading="lazy" width="320" height="180"><p class="etime"></p><p class="edate"></p><h3 class="script gold"></h3></div></li></template>
+  <section class="section events-section">
+    <div class="section-inner">
+      <p class="eyebrow reveal">Join us for an evening of joy</p>
+      <h2 class="script gold reveal">Wedding Events</h2>
+      <svg class="ornament-rule reveal" aria-hidden="true"><use href="#divider"/></svg>
+      <ol class="events-list" id="events"></ol>
+      <template id="ev">
+        <li class="event-card reveal">
+          <div class="event-photo"><img alt="" loading="lazy" width="800" height="600"></div>
+          <div class="event-details">
+            <span class="event-number"></span>
+            <p class="etime"></p>
+            <p class="edate"></p>
+            <h3 class="script gold"></h3>
+          </div>
+        </li>
+      </template>
+    </div>
   </section>
 
-
-  <!-- 8. FOOTER -->
-  <footer class="sec">
-    <svg class="spray"><use href="#spray"/></svg>
-    <p class="script gold mono">M&amp;T</p>
+  <footer class="footer-section">
+    <svg class="footer-flower" aria-hidden="true"><use href="#flower"/></svg>
+    <p class="eyebrow">With love and duas</p>
+    <p class="script footer-monogram">MT</p>
+    <svg class="ornament-rule" aria-hidden="true"><use href="#divider"/></svg>
     <p>We look forward to celebrating with you</p>
-    <p class="script gold names" data-b="groom"></p>
-    <p data-b="dateLong"></p>
-    <p class="from">From<br><b data-b="fromName"></b><br><span data-b="fromAddr"></span></p>
-    <p id="phones"></p>
-    <a class="btn" id="rsvp" target="_blank" rel="noopener">RSVP on WhatsApp</a>
+    <p class="script footer-name" data-b="groom"></p>
+    <p class="footer-date" data-b="dateLong"></p>
+    <div class="footer-contact">
+      <p>With regards</p>
+      <b data-b="fromName"></b>
+      <span data-b="fromAddr"></span>
+      <p id="phones"></p>
+    </div>
+    <a class="btn" id="rsvp" target="_blank" rel="noopener">RSVP on WhatsApp <span aria-hidden="true">↗</span></a>
   </footer>
 
-   <!-- 7. VENUE -->
-  <section class="sec">
-    <h2 class="script gold reveal">The Venue</h2>
-    <h3 class="reveal" data-b="venue"></h3><p class="reveal" data-b="address"></p>
-    <a class="btn reveal" id="dir" target="_blank" rel="noopener">Get Directions</a>
-    <iframe class="map reveal" id="map" title="Venue map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <section class="section venue-section">
+    <div class="section-inner">
+      <p class="eyebrow reveal">We look forward to welcoming you</p>
+      <h2 class="script gold reveal">The Venue</h2>
+      <svg class="ornament-rule reveal" aria-hidden="true"><use href="#divider"/></svg>
+      <div class="venue-card reveal">
+        <div class="venue-copy">
+          <span class="venue-mark" aria-hidden="true">✦</span>
+          <h3 data-b="venue"></h3>
+          <p data-b="address"></p>
+          <a class="btn" id="dir" target="_blank" rel="noopener">Get Directions <span aria-hidden="true">↗</span></a>
+        </div>
+        <iframe class="map" id="map" title="Map showing the wedding venue" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
   </section>
 </main>
 
-<!-- MUSIC: use a licensed or royalty-free track (e.g. Pixabay Music, YouTube Audio Library, Free Music Archive; check each licence). Keep it under ~2 MB. -->
 <audio id="bgm" src="assets/jashn-e-bahaaraa-instrumental.mp3" loop preload="none"></audio>
 <button id="music" aria-label="Toggle music" aria-pressed="false">♪</button>
 <script src="script.js"></script>
